@@ -1,3 +1,9 @@
+This fork of pigpio has only a single change - an option to create a static
+link library for use on Lakka. To build the static library, type:
+make pigpio_static
+
+The rest of this project is unchanged. What follows is the original README
+
 # pigpio
 
 pigpio is a C library for the Raspberry which allows control of the

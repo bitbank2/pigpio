@@ -61,6 +61,11 @@ x_pigpiod_if:	x_pigpiod_if.o $(LIB2)
 x_pigpiod_if2:	x_pigpiod_if2.o $(LIB3)
 	$(CC) -o x_pigpiod_if2 x_pigpiod_if2.o $(LL3)
 
+pigpio_static: pigpio.o pigs.o pigpiod.o command.o
+	$(AR) -rc libpigpio.a pigpio.o pigs.o command.o ;\
+	sudo cp libpigpio.a /usr/local/lib ;\
+	sudo cp pigpio.h /usr/local/include 
+
 pigpiod:	pigpiod.o $(LIB1)
 	$(CC) -o pigpiod pigpiod.o $(LL1)
 	$(STRIP) pigpiod
